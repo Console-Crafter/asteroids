@@ -12,6 +12,8 @@ def main():
 if __name__ == "__main__":
     main()
 
+clock = pygame.time.Clock()
+dt = 0
 #Game loop
 running = True
 while running:
@@ -24,6 +26,9 @@ while running:
     screen.fill((0, 0, 0))
 
     pygame.display.flip()
+
+    dt = clock.tick(60) / 1000  # Limit to 60 FPS
+    #print(f"Delta time for this frame: {dt} seconds")
 
 pygame.quit()
 sys.exit()
